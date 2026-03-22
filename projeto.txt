@@ -1,0 +1,39 @@
+-Brainstorm
+
+
+cliente não sabe o que quer
+
+
+1- descobrir qual nosso sistema/o que o sistema vai fazer
+exemplo: estacionamento do centro
+
+Qual a necessidade de um estacionamento? Espaço/Registrar/Como guardar/ Quem são meus clientes
+
+
+Sistema:
+	O sistema ira oferecer um Painel como forma de Check-in.
+	Sistema vai anotar salvar a placa do carro e identificar o horário que o cliente chegou.
+	O manobrista ira levar o carro para a vaga disponível.
+	O sistema ira identificar a quantidade de vagas o estacionamento possui (Disponíveis e ocupadas).
+	
+
+Ideias: Plano de clientes.
+
+1. Mapeamento e Localização (A Solução do Maior Gargalo)
+Como são 5.000 vagas e os manobristas se perdem, o sistema precisa ir além de apenas contar ocupadas x disponíveis.
+
+Setorização Digital: Dividir o estacionamento no sistema (Ex: Setor A - Azul, Setor B - Verde).
+
+Vínculo Carro-Vaga: No momento do check-in, o sistema já sugere um setor ou vaga específica para o manobrista no painel em qual vaga exata (ex: Vaga B-142) ele deixou o carro. Assim, na saída, ele vai direto ao ponto.
+
+2. Gestão de Cobrança e Saída (O Checkout)
+Cálculo Automático de Tarifas: O sistema usa a hora do check-in para calcular o valor exato no check-out, aplicando regras diferentes se for um cliente avulso ou mensalista, quantidade de horas, se foi uma diária ou não (do "Plano de clientes").
+
+Tolerância e Frações: Definir regras de negócio para tolerância (ex: primeiros 15 min grátis) e cobrança por fração de hora.
+
+3. Visão Gerencial e Relatórios
+Um estacionamento desse tamanho gera uma quantidade massiva de dados valiosos todos os dias.
+
+Dashboards de Operação: Criar painéis visuais para o gerente acompanhar o fluxo em tempo real (picos de entrada/saída) e a taxa de ocupação.
+
+Relatórios Financeiros: Extrair dados consolidados de faturamento diário, semanal e mensal para prestação de contas.
