@@ -1,70 +1,28 @@
-# 🚗 Sistema de Gestão e Controle de Estacionamento
+# Sistema de Gestão e Controle de Estacionamento
 
-> **Status do Projeto:** Planejamento e Iniciação 🏗️  
-> [cite_start]**Data de Entrega Prevista:** 23 de março de 2026 [cite: 37]
+**Link do Repositório:** https://github.com/cauefernandes0/SoftwareEngineering#
 
-## 📝 Visão Geral
-[cite_start]Este projeto consiste em uma solução de software integrada para a automação e controle total de operações de estacionamento de grande porte[cite: 45]. [cite_start]O sistema visa substituir processos manuais (papel e planilhas) por uma operação tecnológica que inclui **totens de self check-in**, controle de vagas em tempo real e gestão financeira automatizada[cite: 45, 52].
+## Descrição do Projeto
+O produto consiste em uma solução de software integrada projetada para a gestão e controle de operações de um estacionamento de alta capacidade (5.000 vagas) e operação de totens de *self check-in*. O sistema visa automatizar o espaço, substituindo processos manuais realizados em papel ou planilhas Excel, o que reduz a margem de erro humano, inconsistências de dados e otimiza o tempo de operação, sanando falhas de segurança no controle de acesso de veículos.
 
-[cite_start]A solução é desenhada para **alta disponibilidade**, sendo capaz de operar **offline** temporariamente, garantindo que o fluxo de veículos não pare mesmo em caso de falhas de conectividade[cite: 48, 89].
+## Funcionalidades Principais
+* **Controle de Acessos e Vagas:** O sistema gerencia as vagas disponíveis e ocupadas, registrando o horário de entrada e saída de veículos.
+* **Setorização Digital:** O sistema divide o estacionamento em setores (ex: Setor A - Azul) e sugere ao manobrista a melhor vaga/setor para estacionar no momento do *check-in*, vinculando o carro à vaga exata para facilitar a saída.
+* **Validação Digital e Física:** O *check-in* do veículo gera a emissão de um ticket físico ou a autenticação por cadastramento digital, como QR Code ou leitura de placa (câmera LPR).
+* **Gestão de Tarifas e Cobranças:** Cálculo automático no *checkout* baseado na hora exata do *check-in*, diferindo clientes avulsos de mensalistas, cobrando por fração de hora e garantindo isenção de tarifa para saídas em até 15 minutos.
+* **Painel Gerencial:** Criação de painéis visuais para o gerente acompanhar o fluxo em tempo real, picos de entrada/saída, taxa de ocupação, além de extrair relatórios consolidados de faturamento diário, semanal e mensal.
+* **Auditoria (Logs):** Cada movimento de inclusão, alteração e exclusão de dados é registrado em um log, identificando quem fez (ID do usuário/operador), a data, a hora e o que foi editado.
 
----
+## Tecnologias e Arquitetura
+A base estrutural e os requisitos técnicos foram definidos visando o equilíbrio com base nas dimensões do modelo FURPS (Funcionalidade, Usabilidade, Confiabilidade, Desempenho e Suportabilidade):
+* **Linguagem e Banco de Dados:** O desenvolvimento é feito em Java e o banco de dados utilizado é o SQL Server.
+* **Paradigmas e Modelagem:** A arquitetura de software é Orientada a Objetos, com o desenvolvimento baseado em *Clean Code* e a modelagem feita com UML.
+* **Performance e Escalabilidade:** A infraestrutura permite picos de até 5.000 transações por segundo e garante um tempo de resposta de no máximo 5 segundos nas consultas.
+* **Confiabilidade e Operação Offline:** O totem de entrada/saída possui a capacidade de operar temporariamente *offline* e sincronizar os dados posteriormente com o servidor principal, com rotinas robustas de validação.
+* **Segurança de Rede:** Toda a comunicação do sistema instalado nos dispositivos externos (totens e mobile) com o banco de dados e a internet passa obrigatoriamente por um Firewall físico.
 
-## 🚀 Principais Funcionalidades
-
-### **Operacional**
-* [cite_start]**Check-in Inteligente:** Registro de entradas via ticket físico ou autenticação digital (QR Code/Placa)[cite: 46, 83].
-* [cite_start]**Gestão de Vagas:** Controle em tempo real das 5.000 vagas disponíveis[cite: 12, 61].
-* [cite_start]**Setorização Digital:** Divisão do pátio em setores (Ex: Setor A, Setor B) para facilitar a localização pelos manobristas[cite: 28, 65].
-* [cite_start]**Sugestão de Vaga:** O sistema indica ao manobrista o setor mais vazio para otimizar o fluxo[cite: 66, 67].
-
-### **Financeiro e Administrativo**
-* [cite_start]**Cálculo Automático:** Cobrança baseada no tempo de permanência, diferenciando clientes avulsos de mensalistas[cite: 30, 68].
-* [cite_start]**Regras de Negócio:** Suporte a períodos de tolerância (ex: 15 min grátis) e cobrança por frações de hora[cite: 31, 70, 85].
-* [cite_start]**Dashboards Gerenciais:** Painéis visuais para acompanhar picos de fluxo e taxa de ocupação em tempo real[cite: 33, 71].
-* [cite_start]**Relatórios:** Extração de dados consolidados de faturamento diário, semanal e mensal[cite: 34, 73].
-
----
-
-## 🛠️ Especificações Técnicas
-
-* [cite_start]**Linguagem:** Java[cite: 91, 148].
-* [cite_start]**Arquitetura:** Orientada a Objetos (POO) fundamentada em *Clean Code*[cite: 91, 148].
-* [cite_start]**Banco de Dados:** SQL Server[cite: 148].
-* [cite_start]**Modelagem:** Utilização de diagramas UML[cite: 93, 148].
-* [cite_start]**Segurança:** Comunicação protegida por Firewall físico e lógico[cite: 48, 87].
-* [cite_start]**Performance:** Capacidade para até 5.000 transações por segundo com tempo de resposta inferior a 5 segundos[cite: 75, 149].
-
----
-
-## 📊 Qualidade do Software (Modelo FURPS)
-[cite_start]O projeto é validado sob as cinco dimensões de qualidade[cite: 134, 153]:
-1.  [cite_start]**F (Functionality):** Atendimento total aos requisitos de negócio e regras de cálculo[cite: 154].
-2.  [cite_start]**U (Usability):** Interface intuitiva para clientes (totem) e operadores[cite: 76, 156].
-3.  [cite_start]**R (Reliability):** Logs de auditoria para cada alteração de dado e operação offline segura[cite: 80, 100, 158].
-4.  [cite_start]**P (Performance):** Respostas rápidas e alta fluidez sob carga[cite: 160].
-5.  [cite_start]**S (Supportability):** Documentação UML e código estruturado para fácil manutenção[cite: 161, 162].
-
----
-
-## 💰 Estrutura de Custos Estimada
-O investimento total é de **R$ 166.000,00**, distribuído da seguinte forma:
-
-| Categoria | Descrição | Total |
-| :--- | :--- | :--- |
-| **Recursos Humanos** | [cite_start]Gerente, Analista, Engenheiro e Desenvolvedores [cite: 111, 112] | R$ 97.000,00 |
-| **Software** | [cite_start]Licenças de SGBD, SO e Firewall [cite: 113] | R$ 21.000,00 |
-| **Infraestrutura** | [cite_start]Servidores, Totens, Câmeras LPR e Rede [cite: 114, 115] | R$ 48.000,00 |
-
----
-
-## 👥 Equipe (Time Impactados)
-* [cite_start]**Cauê** (RA: 2501106) [cite: 39]
-* [cite_start]**Pedro Fusco** (RA: 2401933) [cite: 39]
-* [cite_start]**Pedro Luiz** (RA: 2501585) [cite: 39]
-
----
-
-## ⚠️ Riscos e Mitigação
-* **Sincronização Offline:** Risco de conflito de dados. [cite_start]*Mitigação:* Implementação de rotinas de validação (*checksum*)[cite: 100, 103].
-* **Falha de Hardware:** Atolamento de papel ou erro em leitores ópticos. [cite_start]*Mitigação:* Manutenção preventiva e liberação manual pelo sistema[cite: 104, 108].
+## Equipe e Autores
+Projeto planejado e desenvolvido pela equipe "Time Impactados":
+* **Cauê** - 2501106
+* **Pedro Fusco** - 2401933
+* **Pedro Luiz** - 2501585
