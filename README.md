@@ -1,6 +1,7 @@
 # Sistema de Gestão e Controle de Estacionamento
 
 **Link do Repositório:** https://github.com/cauefernandes0/SoftwareEngineering#
+**Link do Protótipo** https://www.figma.com/proto/B19xuqftj9QWAKg6ZywAkG?node-id=0:1
 
 ## Descrição do Projeto
 O produto consiste em uma solução de software integrada projetada para a gestão e controle de operações de um estacionamento de alta capacidade (5.000 vagas) operando no modelo self-park. O sistema visa automatizar o espaço, substituindo processos manuais realizados em papel ou planilhas Excel, o que reduz a margem de erro humano, inconsistências de dados e otimiza o tempo de operação, sanando falhas de segurança no controle de acesso de veículos.
